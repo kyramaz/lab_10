@@ -31,11 +31,19 @@ public:
         m_circle.setPosition(X/2 - m_R, Y - 2 * (m_R));
         m_circle.setFillColor(sf::Color(0xFF0000FF));
     }
+    /*void pos(int x, int y)
+    {
+        m_circle.setPosition(x,y);
+    }*/
     void move()
     {
         if (m_circle.getPosition().y > 0)
         {
-            m_circle.move(0, -3);
+            m_circle.move(0, -40);
+        }
+        if (m_circle.getPosition().y < 0)
+        {
+            m_circle.setPosition(m_circle.getPosition().x, 0);
         }
     }
 
@@ -68,7 +76,11 @@ public:
     {
         if (m_square.getPosition().y > 0)
         {
-            m_square.move(0, -3);
+            m_square.move(0, -30);
+        }
+        if (m_square.getPosition().y < 0)
+        {
+            m_square.setPosition(m_square.getPosition().x, 0);
         }
     }
 };
